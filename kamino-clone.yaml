@@ -1,0 +1,27 @@
+---
+    kamino-clone:
+      name: pets-on-pets/api
+      version: v0.0.1
+      description: "Pets API"
+      specs:
+        alias: pets.api
+        dependencies:
+          - mongo
+        
+        compose:
+          image: pets-on-pets/api:develop
+          container_name: pets-api
+          # command: "tail -f /dev/null"
+          environment:
+            FLASK_APP: "papi.run"
+            FLASK_DEBUG: 1
+            FLASK_ENV: "development"
+            "papi.app.version": 0.0.1
+          volumes:
+            - "./microservices/pets-api:/var/app/current"
+          ports:
+            - 5000:5000
+          networks:
+            pets-on-pets:
+              aliases:
+                - api.pets.io

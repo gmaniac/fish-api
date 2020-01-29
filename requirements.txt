@@ -1,0 +1,11 @@
+Flask==1.1.1
+Flask-Bcrypt==0.7.1
+flask-mongoengine==0.9.5
+flask-restplus==0.13.0
+gunicorn==19.9.0
+marshmallow==3.2.2
+marshmallow-dataclass==7.1.0
+mongoengine-goodjson==0.11.3
+passlib==1.7.1
+pyOpenSSL==19.1.0
+webargs==5.5.2
