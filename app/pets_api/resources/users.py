@@ -1,7 +1,7 @@
 from flask import request
 from flask_restplus import Resource, Namespace, fields
 
-from pets_api.papi.daos.users import UserDAO
+from pets_api.daos.users import UserDAO
 
 """ init the namespace for these routes """
 api = Namespace('users', description='User(s) routes')

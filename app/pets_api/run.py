@@ -1,4 +1,4 @@
-from pets_api.papi.resources import api, app
+from pets_api.resources import api, app
 
 # init restful api
 api.init_app(app)

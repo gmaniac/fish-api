@@ -3,13 +3,13 @@ import udatetime
 from mongoengine_goodjson import Document, EmbeddedDocument
 from mongoengine import BooleanField, DateTimeField, EmbeddedDocumentListField, ListField, ReferenceField, StringField
 
-from pet_models.users import User
+# from pet_models.users import User
 
 
 class Article(EmbeddedDocument):
     """SEO Article class."""
     published_time = StringField()
-    author = ListField(ReferenceField(User))
+    # author = ListField(ReferenceField(User))
     tag = StringField()
 
 
