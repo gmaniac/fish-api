@@ -1,7 +1,3 @@
-import sys
-
-from webargs import fields
-from webargs.flaskparser import use_args
 from flask_restplus import Namespace, Resource
 
 # Custom Imports
@@ -9,8 +5,10 @@ from flask_restplus import Namespace, Resource
 api = Namespace('developer', description='Debugger Resource')
 
 """
- Class Resource to handle budegtz junkies
+ Class Resource to handle debugging
 """
+
+
 @api.route('/debug')
 class Debug(Resource):
     

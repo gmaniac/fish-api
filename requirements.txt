@@ -7,5 +7,7 @@ marshmallow==3.2.2
 marshmallow-dataclass==7.1.0
 mongoengine-goodjson==0.11.3
 passlib==1.7.1
+# pet-models==0.0.1
 pyOpenSSL==19.1.0
+udatetime==0.0.16
 webargs==5.5.2
