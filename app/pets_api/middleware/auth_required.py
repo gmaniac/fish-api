@@ -1,8 +1,8 @@
 from flask import request
 from functools import wraps
 
-from pets_api.papi.daos.tokens import TokenDAO
-from pets_api.papi.daos.users import UserDAO
+from pets_api.daos.tokens import TokenDAO
+from pets_api.daos.users import UserDAO
 
 
 def auth_required(f):

@@ -6,8 +6,8 @@ from datetime import timedelta
 from mongoengine_goodjson import Document, EmbeddedDocument
 from mongoengine import BooleanField, DateTimeField, EmbeddedDocumentListField, ListField, ReferenceField, StringField
 
-from pet_models.locations import Location
-from pet_models.blacklist_tokens import BlacklistToken
+# from pet_models.locations import Location
+# from pet_models.blacklist_tokens import BlacklistToken
 
 
 class Website(EmbeddedDocument):
@@ -36,7 +36,7 @@ class User(Document):
     last_name = StringField()
     profile_image = StringField()
     password_hash = StringField()
-    locations = ListField(ReferenceField(Location))
+    # locations = ListField(ReferenceField(Location))
     roles = ListField(choices=const_roles, default=const_user_role, required=True)
     bio = StringField()
     curated_url = StringField()

@@ -1,4 +1,4 @@
-from pets_api.papi.documents.tokens import Token
+from pets_api.documents.tokens import Token
 
 
 class TokenDAO:

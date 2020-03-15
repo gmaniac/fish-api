@@ -1,7 +1,7 @@
 import udatetime
 
-from pets_api.papi.documents.users import User
-from pets_api.papi.documents.blacklist_tokens import BlacklistToken
+from pets_api.documents.users import User
+from pets_api.documents.blacklist_tokens import BlacklistToken
 
 
 class UserDAO:
