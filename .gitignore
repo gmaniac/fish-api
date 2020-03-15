@@ -1,2 +1,5 @@
 */**/__pycache__
-*/**/pets_api.egg-info
+pets_api.egg-info
+
+.idea
+.idea/*

@@ -12,7 +12,7 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 RUN pip install -r /var/app/current/requirements-dev.txt
 RUN pip install -e /var/app/current/app
         
-ENV FLASK_APP=papi.run
+ENV FLASK_APP=pets_api.run
 ENV FLASK_DEBUG=1
 ENV FLASK_ENV=development
 

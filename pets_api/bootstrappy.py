@@ -1,21 +1,21 @@
-import os
-from flask import Flask
+from flask import Blueprint, Flask
 from flask_restplus import Api
 from flask_bcrypt import Bcrypt
-from flask_restplus import Resource
 from flask_mongoengine import MongoEngine
+
 
 class Bootstrappy(object):
 
     def __init__(self, config):
         self._config = config
+        self._blueprint = None
         self._app = None
         self._api = None
         self._db  = None
 
     def bootstrap(self):
 
-        self._app = Flask(__name__)   
+        self._app = Flask(__name__)
         self._app.config.from_object(self._config)
 
         # add bcrypt to flask
@@ -29,7 +29,20 @@ class Bootstrappy(object):
         
         return self._app
 
-    def api(self, **kwargs):
-        self._api = Api(version=kwargs["version"], title=kwargs["title"], description=kwargs["description"])
+    def blueprint(self, url_prefix):
 
-        return self._api 
+        self._blueprint = Blueprint('api', __name__, url_prefix=url_prefix)
+
+        # register blueprints
+        self._app.register_blueprint(self._blueprint)
+
+    def api(self, **kwargs):
+
+        self._api = Api(version=kwargs["version"],
+                        title=kwargs["title"],
+                        description=kwargs["description"],
+                        security=kwargs["security"],
+                        authorizations=kwargs["authorizations"])
+
+        return self._api
+

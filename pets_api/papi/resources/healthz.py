@@ -1,8 +1,9 @@
-from papi.config import Config
+from pets_api.config import Config
 from flask_restplus import Resource, Namespace
 
 """ init the namespace for these routes """
 api = Namespace('/', description='Health check endpoint.')
+
 
 # configure load balancer healthz
 @api.route('/healthz')
@@ -13,3 +14,4 @@ class Healthz(Resource):
             'microservice': 'pets-api',
             'verion': Config.VERSION
         }
+

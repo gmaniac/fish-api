@@ -1,12 +1,14 @@
 import sys
-from setuptools import setup, find_packages
+from setuptools import setup
+from pets_api.config import Config
+
 
 setup(
     # Application name:
     name="pets-api",
 
     # Version number (initial):
-    version="0.1.0",
+    version=Config.VERSION,
 
     # Application author details:
     author="gmaniac",
@@ -15,7 +17,7 @@ setup(
     cmdclass={},
 
     # Packages
-    packages=["papi"],
+    packages=["pets_api"],
 
     # Entry Point
     
